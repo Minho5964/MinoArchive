@@ -87,3 +87,11 @@ DBListener.on("kick", (chat, channel) => { //강제퇴장
 })
 
 DBListener.start();
+
+function onNotificationPosted(sbn) {
+    DBListener.addChannel(sbn);
+}
+
+function onStartCompile() {
+    DBListener.stop();
+}
