@@ -135,7 +135,7 @@ DBListener.on("leave", (chat, channel) => {//퇴장
     for (var i = 0; i < nick_log_list.length; i++) {
         in_out += nick_log_list[i] + '\n';
     }
-    channel.send(chat.joinUsers[0].nickName + "님이 " + log[channel.id][chat.joinUsers[0].userId]['enter'] + "번째 퇴장하셨습니다." + blank + '\n\n' + in_out);
+    channel.send(chat.leaveUser.nickName + "님이 " + log[channel.id][chat.leaveUser.userId]['enter'] + "번째 퇴장하셨습니다." + blank + '\n\n' + in_out);
     FileStream.write(log_path, JSON.stringify(log, null, 4));
 
 });
